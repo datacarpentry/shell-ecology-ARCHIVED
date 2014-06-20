@@ -1,53 +1,105 @@
----
-layout: lesson
-root: ../..
-title: Shell Reference
----
+#Introduction to the shell
 
-#### Basic Commands
+Based on the very detailed material at [http://software-carpentry.org/v5/novice/shell/index.html](http://software-carpentry.org/v5/novice/shell/index.html).
 
-*   `cat` displays the contents of its inputs.
-*   `cd path` changes the current working directory.
-*   `cp old new` copies a file.
-*   `find` finds files with specific properties that match patterns.
-*   `grep` selects lines in files that match patterns.
-*   `head` displays the first few lines of its input.
-*   `ls path` prints a listing of a specific file or directory; `ls` on its own lists the current working directory.
-*   `man command` displays the manual page for a given command.
-*   `mkdir path` creates a new directory.
-*   `mv old new` moves (renames) a file or directory.
-*   `pwd` prints the user's current working directory.
-*   `rm path` removes (deletes) a file.
-*   `rmdir path` removes (deletes) an empty directory.
-*   `sort` sorts its inputs.
-*   `tail` displays the last few lines of its input.
-*   `touch path` creates an empty file if it doesn't already exist.
-*   `wc` counts lines, words, and characters in its inputs.
-*   `whoami` shows the user's current identity.
+##Objectives
 
-#### Paths
+* Introduce concept of command-line interface
+* Understand the advantages of text files over other file types
+* Explain how to navigate your computer's directory structures and understand paths
+* Bash commands: using flags, finding documentation
+* Move, copy and delete files
+* Using tab completion for efficiency
+* Use of wildcards for pattern matching
 
-*   `/path/from/root` is an absolute path.
-*   `/` on its own refers to the root of the filesystem.
-*   `path/without/leading/slash` is a relative path.
-*   `.` refers to the current directory, `..` to its parent.
-*   `*` matches zero or more characters in a filename, so `*.txt` matches all files ending in `.txt`.
-*   `?` matches any single character in a filename, so `?.txt` matches `a.txt` but not `any.txt`.
 
-#### Combining Commands
+##Commands and hints
 
-*   `command > file` redirects a command's output to a file.
-*   `first | second` connects the output of the first command to the input of the second.
-*   A `for` loop repeats commands once for every thing in a list:
+### Navigating, creating and moving things
+Printing working directory:
+	
+	$ pwd
+	
+List contents of a directory:
+	
+	$ ls
+	
+Change directories:
+	
+	$ cd
+	$ cd ..
+	
+Create and remove directories:
 
-        for variable in name_1 name_2 name_3
-        do
-            ...commands refering to $variable...
-        done
+	$ mkdir
+	$ rmdir
 
-*   Use `$name` to expand a variable (i.e., get its value).
-*   `history` displays recent commands, and `!number` to repeat a command by number.
-*   `bash filename` runs commands saved in `filename`.
-*   `$*` refers to all of a shell script's command-line parameters.
-*   `$1`, `$2`, etc., refer to specified command-line parameters.
-*   `$(command)` inserts a command's output in place.
+Copy, move, delete:
+	
+	$ cp
+	$ mv
+	$ rm
+	
+*Hint: tab completion makes you more efficient and less error-prone*
+
+Create and edit a file:
+	
+	$ touch readme.txt
+	$ nano readme.txt
+	
+###Working with file contents
+
+Seeing the contents of a file:
+
+	$ cat
+	$ less
+	$ head
+	$ tail
+	
+How big is this file?
+	
+	$ ls -lh
+	$ wc
+
+Redirecting output to a file:
+
+	$ wc -l *.csv > number_lines.csv
+	
+Sorting the contents of a file:
+	
+	$ sort number_lines.csv
+	
+Pipe commands together:
+
+	$ wc -l *.csv | sort
+	
+Getting subset of rows:
+
+	$head
+	$tail
+	
+Getting subset of columns (in this case, 3rd column of a file called inputfile.csv):
+	
+	$ cut -f 3 -d , inputfile.csv
+	
+## Finding things
+
+In files and in directories:
+
+	$find
+	$grep
+
+Finding help (manual, or 'man' pages):
+	
+	$man <command>
+		
+## What did I do?
+	
+	$history
+	
+
+
+
+
+
+
