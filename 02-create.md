@@ -3,15 +3,12 @@ layout: lesson
 root: ../..
 title: Creating Things
 ---
-<div class="objectives" markdown="1">
 
 #### Objectives    
 *   Create a directory hierarchy that matches a given diagram.   
 *   Create files in that hierarchy using an editor or by copying and renaming existing files.   
 *   Display the contents of a directory using the command line.
 *   Delete specified files and/or directories.
-
-</div>
 
 We now know how to explore files and directories,
 but how do we create them in the first place?
@@ -359,16 +356,10 @@ thesis/quotations.txt
 > `/home/vlad/data`. This only works if it is the first character in the
 > path: `here/there/~/elsewhere` is *not* `/home/vlad/elsewhere`.
 
-<div class="keypoints" markdown="1">
-
 #### Key Points
 *   Unix documentation uses '^A' to mean "control-A".
 *   The shell does not have a trash bin: once something is deleted, it's really gone.
 *   Nano is a very simple text editor&mdash;please use something else for real work.
-
-</div>
-
-<div class="challenges" markdown="1">
 
 #### Challenges
 
@@ -422,5 +413,3 @@ thesis/quotations.txt
     The command `ls -t` lists things by time of last change,
     with most recently changed files or directories first.
     In what order does `ls -R -t` display things?
-
-</div>
