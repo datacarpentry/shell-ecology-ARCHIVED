@@ -35,13 +35,25 @@ The shell is an example of a command-line interface (CLI). See the material in 0
 
 ### Listing, navigating, creating and moving things
 
+The working directory is your working 'folder'. It groups together the files that you can see, and it is also the place where simple command will read or create files.
+
 Printing working directory:
 
 	$ pwd
 
-List contents of a directory:
+List contents of the working directory:
 
 	$ ls				# show all files
+
+Introduce the concept of a command having one or more flags / parameters:
+
+	$ ls -F
+	$ ls -lh
+
+The -F flag is useful when you do not have colours set on your shell to help distinguish files from directories. This will be true for most participants, while most instructors probably have colours. 
+
+Note that spaces are important. ls-F and ls - F do not work. 
+
 	$ ls -l				# show details
 	$ ls *.txt     			# just files matching pattern *.txt
 	
