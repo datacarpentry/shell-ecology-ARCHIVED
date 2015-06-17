@@ -105,6 +105,15 @@ Warn folks about rm - there is no Trash with bash.
 
 *Hint: tab completion makes you more efficient and less error-prone*
 
+Exercise: move the three .csv data files into a directory called 'data' in the directory for the course. Change to this directory.  
+
+Create and edit a file:
+	
+	$ touch readme.txt
+	$ nano readme.txt
+	
+Put some information about these files in a README.txt file and save. 
+
 ###Working with file contents
 
 Seeing the contents of a file:
@@ -114,9 +123,18 @@ Seeing the contents of a file:
 	$ less <em>file</em>  		# use 'q' to leave the viewer
 </pre>	
 
-Create and/or edit a file:
-	
-	$ nano <em>file</em>
+For instance:
+
+	$ cat species.csv
+	$ cat plots.csv
+	$ cat surveys.csv
+	$ cat plots.csv species.csv
+
+'cat' can get multiple arguments. This will append the contents of all the files after one another. This works well for the small files but not so well for the large file. How can we look at only the top of the file?
+
+	$ less
+	$ head
+	$ tail
 
 How big is this file?
 	
@@ -125,16 +143,21 @@ How big is this file?
 	$ wc     <em>file(s)</em>		# count of lines, words and characters
 </pre>
 
+Using wildcards:
+
+	$ ls *.csv
+	$ wc -l *.csv
+
+Redirecting output to a file using the '>' operator, e.g.:
+
+	$ wc -l *.csv > number_lines.csv
+
 Sorting the contents of a file:
 	
 <pre>
 	$ sort <em>file</em>
 </pre>
 
-Redirecting output to a file: use the '>' operator, e.g.:
-
-	$ wc -l *.csv > number_lines.csv
-	
 Pipe commands together using the `|` operator, e.g.:
 
 	$ wc -l *.csv | sort
@@ -146,10 +169,24 @@ Getting subset of rows:
 	$ tail  <em>file</em>        		# last 10 lines of a file
 </pre>	
 
-Getting a subset of columns (in this case, 3rd column of a file called inputfile.csv):
+
+Exercise: get rows 100 through 200 using head, tail and pipe
+
+Getting a subset of columns (in this case, the year, which is the 3rd column of a file called surveys.csv):
 	
-	$ cut -f 3 -d , inputfile.csv
+	$ cut -f 4 -d , surveys.csv
 	
+Talk about how to get help on commands from man pages; show where to find this information in the web browser (because git bash does not have man). 
+
+	$ cut -f 4 -d , surveys.csv | sort 
+	$ cut -f 4 -d , surveys.csv | sort -r 
+
+How many different genders are there?
+
+	$ cut -f 7 -d , surveys.csv | uniq
+
+Did that work? Why not and how could we fix it? (cut | sort | uniq)
+
 ## Finding things
 
 In files and in directories:
