@@ -2,18 +2,30 @@
 
 Based on the very detailed material at [http://software-carpentry.org/v5/novice/shell/index.html](http://software-carpentry.org/v5/novice/shell/index.html).
 
+Assume that students have a set of three data files (plots.csv, surveys.csv and species.csv) from the  et al publication, either from a github repo or from some other mechanism. 
+
 ##Objectives
 
-* Introduce concept of command-line interface
 * Understand the advantages of text files over other file types
+* Introduce the concept of command-line interface
 * Explain how to navigate your computer's directory structures and understand paths
 * Bash commands: using flags, finding documentation
 * Move, copy and delete files
 * Using tab completion for efficiency
 * Use of wildcards for pattern matching
 
+## Text files
+Let's start by opening Word (other other word processing software such as Libre Office or Open Office). Type some text:
 
-##Commands and hints
+	$ This is not a text file
+
+Save in native format (that might be text.doc, text.docx, text.odt, depending on your word processor). Then, also Save As a text document (text.txt)
+
+Now, open these two files in our text editor - Notepadd++ on Windows or Text Wrangler on Mac. Discuss the simplicity of the text document and the complexity of the non-text document. All of the tools we will use over the next few days can operate on text files. Using text makes it easier to read, manipulate, analyze and share your data. In 20 years, we will still be able to read text files. No such guarantee about Office docs or other proprietary format. 
+
+##Using the shell
+
+The shell is an example of a command-line interface (CLI). See the material in 00-intro.md, online at [http://software-carpentry.org/v5/novice/shell/00-intro.html](Software Carpentry) for details on introducing the shell.  
 
 ### Finding help
 <pre>	
