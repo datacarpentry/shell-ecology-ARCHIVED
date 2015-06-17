@@ -41,9 +41,11 @@ Printing working directory:
 
 	$ pwd
 
+Discuss the path and how that relates to the directory structure you see in the file browser on your computer. 
+
 List contents of the working directory:
 
-	$ ls				# show all files
+	$ ls				# shows all files
 
 Introduce the concept of a command having one or more flags / parameters:
 
@@ -64,7 +66,7 @@ Change directories:
 
 If *directory* start with a '/'; it is an *absolute* path, meaning the location is specified starting at the top of the entire file system (*note: in Linux and Mac OS X there are no drive letters like in Windows!*). If *directory* does not start with a '/' the location is relative to the current directory. The special directory name `..` means 'one level up'. 
 
-	$ cd ..         		# change 'one level up'
+	$ cd ..         		# change the working directory 'one level up'
 	$ cd            		# change to your home directory
 	
 Create and remove directories:
@@ -74,6 +76,19 @@ Create and remove directories:
 	$ rmdir <em>directory</em>
 </pre>
 
+
+Make a directory for this course. Now, let us put some files in that directory. 
+
+Introduce how to Copy, move, delete files:
+	
+	$ cp
+	$ mv
+	$ rm
+	
+Warn folks about rm - there is no Trash with bash. 
+
+
+
 Copy, rename, move, delete:
 	
 <pre>	
@@ -82,8 +97,11 @@ Copy, rename, move, delete:
 	$ rm <em>file</em>
 	$ rm -r <em>directory</em>		# deletes complete directory tree
 </pre>	
+
 If  *destination* is not a directory, `mv` renames, and `cp` copies.
 If *destination* is a directory, `mv` moves file *origin* into that directory, and `cp` makes a copy of file *origin* into that directory.
+
+Warn folks about rm - there is no Trash with bash. 
 
 *Hint: tab completion makes you more efficient and less error-prone*
 
