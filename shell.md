@@ -172,7 +172,7 @@ Getting subset of rows:
 
 Exercise: get rows 100 through 200 using head, tail and pipe
 
-Getting a subset of columns (in this case, the year, which is the 3rd column of a file called surveys.csv):
+Getting a subset of columns (in this case, the year, which is the 4th column of a file called surveys.csv):
 	
 	$ cut -f 4 -d , surveys.csv
 	
@@ -189,14 +189,53 @@ Did that work? Why not and how could we fix it? (cut | sort | uniq)
 
 ## Finding things
 
-In files and in directories:
-<pre>
-	$ grep <em>regexp</em> <em>file(s)</em>		# search pattern in files
-	$ find. -name 'pattern'		# search file matching pattern in current dir and below
-</pre>		
+### In files:
+
+Finding specific text in files using grep:
+
+	$ grep 2000 surveys.csv
+	$ grep -w 2000 surveys.csv
+
+Exercise: get all rows with species="DM" and put these in a new file. How many are there?
+
+Bonus: How would we put a header row on this new file?
+
+	$ head -n 1 > header.csv
+	$ cat header.csv file.csv > newfile.csv
+
+### Find files
+
+	$ find ~ -name "*.csv" -print
+	
+Look at man page for find and see how many different ways we can search. 
+
+
+### Advanced demo
+
+As a final demo, show something more complicated. Where are the python scripts where I used the csv library?
+
+	$ grep -w 'import csv' $(find ~/Documents -name "*.py" -print)
+
+If you have time, unpack this:
+You are storing this output: 
+	$ find ./ -name "*.py"
+in a variable.  Try storing what is in the $() as a named variable:
+
+	$ PYFILES=$(find ./ -name "*.py")
+
+print it to the screen:
+	$ echo $PYFILE
+	
+Now use this in the grep command:
+
+	$ grep -w 'import csv' $PYFILE
+
+This is the same as:
+
+	$ grep -w 'import csv' $(find ./ -name "*.py")
 
 ## What did I do? 
 
-Use the arrow-up key, or:
+To walk through the history of commands you issued, use the arrow-up key. Alternatively, type
 	
 	$ history
