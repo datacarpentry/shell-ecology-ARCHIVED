@@ -253,4 +253,3 @@ To walk through the history of commands you issued, use the arrow-up key. Altern
 	
 	$ history
 	$ history > my_swc_history.txt
- 
