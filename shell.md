@@ -30,11 +30,20 @@ The shell is an example of a command-line interface (CLI). See the material in 0
 ### Finding help
 <pre>	
 	$ type <em>command</em>		# what does command refer to
+        $ help <em>command</em>         # bash-specific commands
 	$ man <em>command</em>		# manual page for command
 </pre>
 
-### Listing, navigating, creating and moving things
+In Git bash, there is no man command available. In that case, simply google for unix man <em>command</em>.
 
+### More help
+
+Some (but not all) commands provide (brief) help when specify a '-h' or '--help' flag, e.g.:
+
+        $ nano -h
+        $ uniq --help
+
+### Listing, navigating, creating and moving things
 
 Refer to the Software Carpentry material in 01-filedir.md, online at [http://software-carpentry.org/v5/novice/shell/01-filedir.html](Software Carpentry) for detailed descriptions of commands. 
 
