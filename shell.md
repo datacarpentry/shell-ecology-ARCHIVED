@@ -27,48 +27,94 @@ Now, open these two files in our text editor - Notepadd++ on Windows or Text Wra
 
 The shell is an example of a command-line interface (CLI). See the material in 00-intro.md, online at [http://software-carpentry.org/v5/novice/shell/00-intro.html](Software Carpentry) for details on introducing the shell.  
 
-### Navigating, creating and moving things
+### Finding help
+<pre>	
+	$ type <em>command</em>		# what does command refer to
+	$ help <em>command</em>		# bash-specific commands
+	$ man <em>command</em>		# manual page for command
+</pre>
+
+In Git bash, there is no man command available. In that case, simply google for unix man <em>command</em>.
+
+### More help
+
+Some (but not all) commands provide (brief) help when you specify a '-h' or '--help' flag, e.g.:
+
+	$ nano -h
+	$ uniq --help
+
+### Listing, navigating, creating and moving things
 
 Refer to the Software Carpentry material in 01-filedir.md, online at [http://software-carpentry.org/v5/novice/shell/01-filedir.html](Software Carpentry) for detailed descriptions of commands. 
 
-Print working directory:
-	
+The working directory is your working 'folder'. It groups together the files that you can see, and it is also the place where simple command will read or create files.
+
+What is my current working directory (print working directory):
+
 	$ pwd
-	
+
 Discuss the path and how that relates to the directory structure you see in the file browser on your computer. 
 
-List contents of a directory:
-	
-	$ ls
-	
-Introduce the concept of a command having one or more flags / paramters:
+List contents of the working directory:
+
+	$ ls		# shows all files
+
+Introduce the concept of a command having one or more flags / parameters:
 
 	$ ls -F
+	$ ls -l -h
 	$ ls -lh
 
 The -F flag is useful when you do not have colours set on your shell to help distinguish files from directories. This will be true for most participants, while most instructors probably have colours. 
 
 Note that spaces are important. ls-F and ls - F do not work. 
 
-Change directories:
+	$ ls -l		# show details
+	$ ls *.txt	# just files matching pattern *.txt
 	
-	$ cd
-	$ cd ..
+Change directories:
 
+<pre>
+$ cd <em>directory</em>		# change to that directory
+</pre>
+
+If *directory* start with a '/', it is an *absolute* path, meaning the location is specified starting at the top of the entire file system (*note: in Linux and Mac OS X there are no drive letters like in Windows!*). If *directory* does not start with a '/' the location is relative to the current directory. The special directory name `..` means 'one level up'. 
+
+	$ cd ..		# change the working directory 'one level up'
+	$ cd		# change to your home directory
+	
 Create and remove directories:
 
-	$ mkdir
-	$ rmdir
+<pre>
+$ mkdir <em>directory</em>
+$ rmdir <em>directory</em>
+</pre>
 
 Make a directory for this course. Now, let us put some files in that directory. 
 
-Introduce how to Copy, move, delete files:
+Introduce how to copy, move, delete files:
 	
 	$ cp
 	$ mv
 	$ rm
 	
 Warn folks about rm - there is no Trash with bash. 
+
+
+
+Copy, rename, move, delete:
+	
+<pre>	
+	$ cp <em>origin</em> <em>destination</em>
+	$ mv <em>origin</em> <em>destination</em>	# note: mv is used for both renaming and moving
+	$ rm <em>file</em>
+	$ rm -r <em>directory</em>			# deletes complete directory tree
+</pre>	
+
+If  *destination* is not a directory, `mv` renames, and `cp` copies.
+If *destination* is a directory, `mv` moves file *origin* into that directory, and `cp` makes a copy of file *origin* into that directory.
+
+Repeat note about rm - no Trash with bash!
 
 *Hint: tab completion makes you more efficient and less error-prone*
 
@@ -85,49 +131,61 @@ Put some information about these files in a README.txt file and save.
 
 Seeing the contents of a file:
 
+<pre>
+	$ cat <em>file</em>
+	$ less <em>file</em>		# use 'q' to leave the viewer
+</pre>	
+
+For instance:
+
 	$ cat species.csv
 	$ cat plots.csv
 	$ cat surveys.csv
 	$ cat plots.csv species.csv
 
-Can have multiple arguments. Note that this works well for the small files but not so well for the large file. How can we look at only the top of the file?
+'cat' can get multiple arguments. This will append the contents of all the files after one another. This works well for the small files but not so well for the large file. How can we look at only the top of the file?
 
 	$ less
 	$ head
 	$ tail
-	
+
 How big is this file?
 	
-	$ ls -lh
-	$ wc
-	$ wc -l
+<pre>
+	$ ls -lh <em>file(s)</em>
+	$ wc     <em>file(s)</em>	# count of lines, words and characters
+</pre>
 
 Using wildcards:
 
 	$ ls *.csv
 	$ wc -l *.csv
 
-Redirecting output to a file:
+Redirecting output to a file using the '>' operator, e.g.:
 
 	$ wc -l *.csv > number_lines.csv
-	
+
 Sorting the contents of a file:
 	
-	$ sort number_lines.csv
-	
-Pipe commands together:
+<pre>
+	$ sort <em>file</em>
+</pre>
+
+Pipe commands together using the `|` operator, e.g.:
 
 	$ wc -l *.csv | sort
 	
 Getting subset of rows:
 
-	$ head
-	$ head -n 20
-	$ tail
+<pre>
+	$ head  <em>file</em>		# first 10 lines of a file
+	$ tail  <em>file</em>		# last 10 lines of a file
+</pre>	
 
-Exercise: get rows 100 through 200 using head, tail and pipe
 
-Getting subset of columns (in this case, year of the surveys.csv file):
+Exercise: get rows 100 through 200 using head, tail and '|'
+
+Getting a subset of columns (in this case, the year, which is the 4th column of a file called surveys.csv):
 	
 	$ cut -f 4 -d , surveys.csv
 	
@@ -142,7 +200,9 @@ How many different genders are there?
 
 Did that work? Why not and how could we fix it? (cut | sort | uniq)
 
-## Finding things
+## Searching
+
+### In files:
 
 Finding specific text in files using grep:
 
@@ -156,12 +216,14 @@ Bonus: How would we put a header row on this new file?
 	$ head -n 1 > header.csv
 	$ cat header.csv file.csv > newfile.csv
 
-Find files:
+### Finding files
 
-	$find ~/ -name "*.csv" -print
+	$ find ~ -name "*.csv" -print
 	
-Note tab completion if you hit tab after ~/
-Look at man page for find and see how many different ways we can search. 
+This will start in '~' (your home directory) and traverses the whole directory tree searching for a file with this particular name. Look at man page for find and see how many different ways we can search. 
+
+
+### Advanced demo
 
 As a final demo, show something more complicated. Where are the python scripts where I used the csv library?
 
@@ -185,7 +247,9 @@ This is the same as:
 
 	$ grep -w 'import csv' $(find ./ -name "*.py")
 
-## What did I do?
+## What did I do? 
+
+To walk through the history of commands you issued, use the arrow-up key. Alternatively, type
 	
 	$ history
 	$ history > my_swc_history.txt
