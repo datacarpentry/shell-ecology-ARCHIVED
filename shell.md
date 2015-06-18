@@ -35,6 +35,9 @@ The shell is an example of a command-line interface (CLI). See the material in 0
 
 ### Listing, navigating, creating and moving things
 
+
+Refer to the Software Carpentry material in 01-filedir.md, online at [http://software-carpentry.org/v5/novice/shell/01-filedir.html](Software Carpentry) for detailed descriptions of commands. 
+
 The working directory is your working 'folder'. It groups together the files that you can see, and it is also the place where simple command will read or create files.
 
 Printing working directory:
@@ -50,6 +53,7 @@ List contents of the working directory:
 Introduce the concept of a command having one or more flags / parameters:
 
 	$ ls -F
+	$ ls -l -h
 	$ ls -lh
 
 The -F flag is useful when you do not have colours set on your shell to help distinguish files from directories. This will be true for most participants, while most instructors probably have colours. 
