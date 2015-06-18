@@ -83,7 +83,7 @@ Create and remove directories:
 
 Make a directory for this course. Now, let us put some files in that directory. 
 
-Introduce how to Copy, move, delete files:
+Introduce how to copy, move, delete files:
 	
 	$ cp
 	$ mv
@@ -97,7 +97,7 @@ Copy, rename, move, delete:
 	
 <pre>	
 	$ cp <em>origin</em> <em>destination</em>
-	$ mv <em>origin</em> <em>destination</em>  # used for both renaming and moving
+	$ mv <em>origin</em> <em>destination</em>  # note: mv is used for both renaming and moving
 	$ rm <em>file</em>
 	$ rm -r <em>directory</em>		# deletes complete directory tree
 </pre>	
@@ -105,7 +105,7 @@ Copy, rename, move, delete:
 If  *destination* is not a directory, `mv` renames, and `cp` copies.
 If *destination* is a directory, `mv` moves file *origin* into that directory, and `cp` makes a copy of file *origin* into that directory.
 
-Warn folks about rm - there is no Trash with bash. 
+Repeat note about rm - no Trash with bash!
 
 *Hint: tab completion makes you more efficient and less error-prone*
 
@@ -174,7 +174,7 @@ Getting subset of rows:
 </pre>	
 
 
-Exercise: get rows 100 through 200 using head, tail and pipe
+Exercise: get rows 100 through 200 using head, tail and '|'
 
 Getting a subset of columns (in this case, the year, which is the 4th column of a file called surveys.csv):
 	
