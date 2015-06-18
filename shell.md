@@ -73,9 +73,11 @@ Note that spaces are important. ls-F and ls - F do not work.
 	$ ls *.txt	# just files matching pattern *.txt
 	
 Change directories:
+
 <pre>
 $ cd <em>directory</em>		# change to that directory
-</em>
+</pre>
+
 If *directory* start with a '/'; it is an *absolute* path, meaning the location is specified starting at the top of the entire file system (*note: in Linux and Mac OS X there are no drive letters like in Windows!*). If *directory* does not start with a '/' the location is relative to the current directory. The special directory name `..` means 'one level up'. 
 
 	$ cd ..		# change the working directory 'one level up'
@@ -86,7 +88,7 @@ Create and remove directories:
 <pre>
 $ mkdir <em>directory</em>
 $ rmdir <em>directory</em>
-</em>
+</pre>
 
 Make a directory for this course. Now, let us put some files in that directory. 
 
