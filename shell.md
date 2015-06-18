@@ -29,9 +29,9 @@ The shell is an example of a command-line interface (CLI). See the material in 0
 
 ### Finding help
 <pre>	
-$ type <em>command</em>		# what does command refer to
-$ help <em>command</em>		# bash-specific commands
-$ man <em>command</em>		# manual page for command
+	$ type <em>command</em>		# what does command refer to
+	$ help <em>command</em>		# bash-specific commands
+	$ man <em>command</em>		# manual page for command
 </pre>
 
 In Git bash, there is no man command available. In that case, simply google for unix man <em>command</em>.
@@ -40,8 +40,8 @@ In Git bash, there is no man command available. In that case, simply google for 
 
 Some (but not all) commands provide (brief) help when you specify a '-h' or '--help' flag, e.g.:
 
-        $ nano -h
-        $ uniq --help
+	$ nano -h
+	$ uniq --help
 
 ### Listing, navigating, creating and moving things
 
@@ -73,9 +73,8 @@ Note that spaces are important. ls-F and ls - F do not work.
 	$ ls *.txt	# just files matching pattern *.txt
 	
 Change directories:
-<pre>	
-$ cd  <em>directory</em>		# change to that directory
-</pre>
+
+	$ cd  <em>directory</em>		# change to that directory
 
 If *directory* start with a '/'; it is an *absolute* path, meaning the location is specified starting at the top of the entire file system (*note: in Linux and Mac OS X there are no drive letters like in Windows!*). If *directory* does not start with a '/' the location is relative to the current directory. The special directory name `..` means 'one level up'. 
 
@@ -84,11 +83,8 @@ If *directory* start with a '/'; it is an *absolute* path, meaning the location 
 	
 Create and remove directories:
 
-<pre>
-$ mkdir <em>directory</em>
-$ rmdir <em>directory</em>
-</pre>
-
+	$ mkdir <em>directory</em>
+	$ rmdir <em>directory</em>
 
 Make a directory for this course. Now, let us put some files in that directory. 
 
@@ -105,10 +101,10 @@ Warn folks about rm - there is no Trash with bash.
 Copy, rename, move, delete:
 	
 <pre>	
-$ cp <em>origin</em> <em>destination</em>
-$ mv <em>origin</em> <em>destination</em>	# note: mv is used for both renaming and moving
-$ rm <em>file</em>
-$ rm -r <em>directory</em>			# deletes complete directory tre
+	$ cp <em>origin</em> <em>destination</em>
+	$ mv <em>origin</em> <em>destination</em>	# note: mv is used for both renaming and moving
+	$ rm <em>file</em>
+	$ rm -r <em>directory</em>			# deletes complete directory tree
 </pre>	
 
 If  *destination* is not a directory, `mv` renames, and `cp` copies.
@@ -132,8 +128,8 @@ Put some information about these files in a README.txt file and save.
 Seeing the contents of a file:
 
 <pre>
-$ cat <em>file</em>
-$ less <em>file</em>		# use 'q' to leave the viewer
+	$ cat <em>file</em>
+	$ less <em>file</em>		# use 'q' to leave the viewer
 </pre>	
 
 For instance:
@@ -152,8 +148,8 @@ For instance:
 How big is this file?
 	
 <pre>
-$ ls -lh <em>file(s)</em>
-$ wc     <em>file(s)</em>	# count of lines, words and characters
+	$ ls -lh <em>file(s)</em>
+	$ wc     <em>file(s)</em>	# count of lines, words and characters
 </pre>
 
 Using wildcards:
@@ -168,7 +164,7 @@ Redirecting output to a file using the '>' operator, e.g.:
 Sorting the contents of a file:
 	
 <pre>
-$ sort <em>file</em>
+	$ sort <em>file</em>
 </pre>
 
 Pipe commands together using the `|` operator, e.g.:
@@ -178,8 +174,8 @@ Pipe commands together using the `|` operator, e.g.:
 Getting subset of rows:
 
 <pre>
-$ head  <em>file</em>		# first 10 lines of a file
-$ tail  <em>file</em>		# last 10 lines of a file
+	$ head  <em>file</em>		# first 10 lines of a file
+	$ tail  <em>file</em>		# last 10 lines of a file
 </pre>	
 
 
@@ -253,3 +249,4 @@ To walk through the history of commands you issued, use the arrow-up key. Altern
 	
 	$ history
 	$ history > my_swc_history.txt
+ 
