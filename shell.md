@@ -189,8 +189,3 @@ This is the same as:
 	
 	$ history
 	$ history > my_swc_history.txt
-
-
-
-
-
