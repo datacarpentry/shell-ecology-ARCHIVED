@@ -40,7 +40,7 @@ Refer to the Software Carpentry material in 01-filedir.md, online at [http://sof
 
 The working directory is your working 'folder'. It groups together the files that you can see, and it is also the place where simple command will read or create files.
 
-Printing working directory:
+What is my current working directory (print working directory):
 
 	$ pwd
 
@@ -191,7 +191,7 @@ How many different genders are there?
 
 Did that work? Why not and how could we fix it? (cut | sort | uniq)
 
-## Finding things
+## Searching
 
 ### In files:
 
@@ -207,11 +207,11 @@ Bonus: How would we put a header row on this new file?
 	$ head -n 1 > header.csv
 	$ cat header.csv file.csv > newfile.csv
 
-### Find files
+### Finding files
 
 	$ find ~ -name "*.csv" -print
 	
-Look at man page for find and see how many different ways we can search. 
+This will start in '~' (your home directory) and traverses the whole directory tree searching for a file with this particular name. Look at man page for find and see how many different ways we can search. 
 
 
 ### Advanced demo
