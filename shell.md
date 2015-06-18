@@ -57,7 +57,7 @@ Discuss the path and how that relates to the directory structure you see in the 
 
 List contents of the working directory:
 
-	$ ls				# shows all files
+	$ ls		# shows all files
 
 Introduce the concept of a command having one or more flags / parameters:
 
@@ -69,8 +69,8 @@ The -F flag is useful when you do not have colours set on your shell to help dis
 
 Note that spaces are important. ls-F and ls - F do not work. 
 
-	$ ls -l				# show details
-	$ ls *.txt     			# just files matching pattern *.txt
+	$ ls -l		# show details
+	$ ls *.txt	# just files matching pattern *.txt
 	
 Change directories:
 <pre>	
@@ -79,8 +79,8 @@ Change directories:
 
 If *directory* start with a '/'; it is an *absolute* path, meaning the location is specified starting at the top of the entire file system (*note: in Linux and Mac OS X there are no drive letters like in Windows!*). If *directory* does not start with a '/' the location is relative to the current directory. The special directory name `..` means 'one level up'. 
 
-	$ cd ..         		# change the working directory 'one level up'
-	$ cd            		# change to your home directory
+	$ cd ..		# change the working directory 'one level up'
+	$ cd		# change to your home directory
 	
 Create and remove directories:
 
@@ -106,9 +106,9 @@ Copy, rename, move, delete:
 	
 <pre>	
 	$ cp <em>origin</em> <em>destination</em>
-	$ mv <em>origin</em> <em>destination</em>  # note: mv is used for both renaming and moving
+	$ mv <em>origin</em> <em>destination</em>	# note: mv is used for both renaming and moving
 	$ rm <em>file</em>
-	$ rm -r <em>directory</em>		# deletes complete directory tree
+	$ rm -r <em>directory</em>			# deletes complete directory tree
 </pre>	
 
 If  *destination* is not a directory, `mv` renames, and `cp` copies.
@@ -133,7 +133,7 @@ Seeing the contents of a file:
 
 <pre>
 	$ cat <em>file</em>
-	$ less <em>file</em>  		# use 'q' to leave the viewer
+	$ less <em>file</em>		# use 'q' to leave the viewer
 </pre>	
 
 For instance:
@@ -153,7 +153,7 @@ How big is this file?
 	
 <pre>
 	$ ls -lh <em>file(s)</em>
-	$ wc     <em>file(s)</em>		# count of lines, words and characters
+	$ wc     <em>file(s)</em>	# count of lines, words and characters
 </pre>
 
 Using wildcards:
@@ -178,8 +178,8 @@ Pipe commands together using the `|` operator, e.g.:
 Getting subset of rows:
 
 <pre>
-	$ head  <em>file</em>        		# first 10 lines of a file
-	$ tail  <em>file</em>        		# last 10 lines of a file
+	$ head  <em>file</em>		# first 10 lines of a file
+	$ tail  <em>file</em>		# last 10 lines of a file
 </pre>	
 
 
